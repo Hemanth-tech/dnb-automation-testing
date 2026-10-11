@@ -1,0 +1,24 @@
+{
+  "name": "dnb-automation-testing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dnbTest": "cucumber-js --config test-cucumber-config/cucumber.js",
+    "dnbTest:chrome": "cross-env BROWSER_CHANNEL=chrome npm run dnbTest --",
+    "dnbTest:edge": "cross-env BROWSER_CHANNEL=msedge npm run dnbTest --",
+    "dnbTest:allBrowsers": "run-s --continue-on-error \"dnbTest:chrome -- {@}\" \"dnbTest:edge -- {@}\" --"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@cucumber/cucumber": "11.3.0",
+    "@playwright/test": "^1.64.0",
+    "cross-env": "7.0.3",
+    "dotenv": "^18.0.7",
+    "moment-timezone": "^0.6.5",
+    "npm-run-all2": "7.0.2",
+    "winston": "^3.19.0"
+  }
+}
